@@ -24,7 +24,7 @@ export default function Home(){
                     <div className="flex flex-row space-x-4 ">
                         <div className=" block bg-surface-secondary text-white p-4 rounded-[9px] flex flex-row space-x-2 items-center transition-all duration-300 hover:bg-surface-primary hover:border-white hover:border-[1px]">
                             <Image src="/ReadCvLogo.png" width={20} height={20}/>
-                            <input type="submit" onClick={() => window.open('/sarah_CV.pdf')} value="My resume"  className="cursor-pointer outline-none border-none bg-transparent text-white"  />
+                            <input type="submit" onClick={() => window.open('/CV_Touahri_sara.pdf')} value="My resume"  className="cursor-pointer outline-none border-none bg-transparent text-white"  />
                         </div>
                         <Link href="/pages/Contact">
                         <div className=" block bg-button-primary-default  text-white p-4 rounded-[9px] flex flex-row space-x-2 transition-all duration-300 hover:bg-button-primary-hover hover:border-white hover:border-[1px]">

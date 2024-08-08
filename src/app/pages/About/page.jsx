@@ -27,7 +27,7 @@ export default function About(){
                         Besides coding, I am a coffee enthusiast and a self-taught artist who enjoys watching anime in my free time. I am actively looking for opportunities to apply my skills and enthusiasm to contribute to a tech company. I am excited about the prospect of relocating to explore fresh opportunities and further grow in my career.</p>
                          <div className=" w-40 block bg-button-primary-default  text-white p-3 rounded-[9px] flex flex-row space-x-2 transition-all duration-300 hover:bg-button-primary-hover hover:border-white hover:border-[1px]">
                             <Image src="/ReadCvLogo.png" width={20} height={20}/>
-                            <input type="submit" onClick={() => window.open('/sarah_CV.pdf')} value="My resume"  className="cursor-pointer outline-none border-none bg-transparent text-white"/>
+                            <input type="submit" onClick={() => window.open('/CV_Touahri_sara.pdf')} value="My resume"  className="cursor-pointer outline-none border-none bg-transparent text-white"/>
                         </div>
                     </div>
                    
