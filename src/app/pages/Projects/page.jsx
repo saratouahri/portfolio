@@ -57,10 +57,7 @@ export default function Projects(){
             ))}  
             </div>
 
-            <div className=" block bg-surface-secondary  text-white p-4 rounded-[9px] flex flex-row space-x-2 transition-all duration-300 hover:bg-surface-primary hover:border-white hover:border-[1px]">
-                            <input type="submit" value="see all" className="cursor-pointer outline-none border-none bg-transparent text-white"/>
-                            <Image src="/ArrowRight.png" width={20} height={20}/>
-                </div>
+           
         </div>
         <Image src="/Graphic3.svg" width={50} height={50} className="ml-[1150px]  absolute z-10"/>
         </div>
