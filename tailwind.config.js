@@ -22,12 +22,12 @@ module.exports = {
         "text-secondary":'#CDD0D4',
       },
       fontFamily: {
-        heebo: ["Heebo", "sans-serif"],
+        heebo: ["mons", "sans-serif"],
       },
      
       boxShadow: {
         'custom-bottom': '0 8px 16px rgba(0, 0, 0, 0.25)',
-        'shadow2': '0 8px 16px #171023',
+        'shadow2': '0 0px 16px rgba(0, 0, 0, 0.5)',
 
         "shadow-card":'0px 0px 16px #7BFFAF'
       },

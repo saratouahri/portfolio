@@ -7,7 +7,7 @@ import Contact from "@/app/pages/Contact/page";
 
 export default function APP() {
   return (
-    <main className="flex flex-col">
+    <main className="flex flex-col ">
     
      <Home/>
      <About/>
