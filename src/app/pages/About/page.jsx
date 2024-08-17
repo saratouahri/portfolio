@@ -3,7 +3,7 @@
 import Image from "next/image"
 export default function About(){
     return(
-        <div className="h-fit w-full lg:bg-surface-background bg-surface-secondary flex justify-center items-center">
+        <div className="h-fit lg:h-screen w-full lg:bg-surface-background bg-surface-secondary flex justify-center items-center">
 
             <div className="w-11/12 h-fit bg-surface-secondary rounded-[9px] flex flex-col lg:flex-row  gap-20 mt-16 lg:mt-0">
                 <div className="flex  items-center lg:ml-8">
@@ -30,7 +30,7 @@ export default function About(){
                         
                     </div>
 
-                    <div className=" mb-10 lg:mb-0 w-40 block bg-button-primary-default  text-white p-3 rounded-[9px] flex flex-row space-x-2 transition-all duration-300 border-[1px] border-button-primary-default hover:bg-button-primary-hover hover:border-white hover:border-[1px]">
+                    <div className=" mb-14 w-40 block bg-button-primary-default  text-white p-3 rounded-[9px] flex flex-row space-x-2 transition-all duration-300 border-[1px] border-button-primary-default hover:bg-button-primary-hover hover:border-white hover:border-[1px]">
                             <Image src="/ReadCvLogo.svg" width={20} height={20}/>
                             <input type="submit" onClick={() => window.open('/CV_Touahri_sara.pdf')} value="My resume"  className="cursor-pointer outline-none border-none bg-transparent text-white"/>
                         </div>
