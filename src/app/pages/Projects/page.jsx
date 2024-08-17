@@ -14,9 +14,9 @@ export default function Projects(){
 
         <div className=" h-fit lg:h-full  w-full bg-surface-background   ">
             <Image src="/Graphic2.svg" width={80} height={80} className="mt-4 ml-[-20px] absolute  z-10"/>
-            <div className="flex flex-col  items-center lg:justify-center gap-4 lg:gap-8  ">
+            <div className="flex flex-col  items-center justify-center lg:justify-center gap-4 lg:gap-8  ">
                 <Image src="/Projects.svg" width={100} height={100} className="mt-8 lg:mt-4 "/>
-            <h1 className="text-[20px] text-white font-medium w-6/12 lg:flex lg:justify-center lg:items-center lg:w-full">Take a look at my highlighted projects</h1>
+            <h1 className="text-[20px] text-center text-white font-medium w-9/12 flex justify-center items-center lg:flex lg:justify-center lg:items-center lg:w-full">Take a look at my highlighted projects</h1>
 
             <div className="flex flex-col lg:flex-row gap-8 m-6 lg:m-0 ">
             {projects.map((project) => (
