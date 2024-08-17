@@ -49,8 +49,8 @@ export default function Home(){
                 </div>
 
             </div>
-            <div className="lg:hidden sm:flex sm:flex-row  mx-24 absolute z-10 ">
-                    <Image src="/Graphic.svg" width={150} height={150}/>
+            <div className="lg:hidden sm:flex sm:flex-row  mx-24 relative  mt-2 ">
+                    <Image src="/Graphic.svg" width={120} height={120}/>
             </div>
         </div>
     )

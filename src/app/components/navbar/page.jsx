@@ -12,7 +12,7 @@ export default function NavBar() {
   };
 
   return (
-    <div>
+    <div onClick={toggleVisibility} className={`${visibility ? '' : '' }`} >
     <div onClick={toggleVisibility} className={`${visibility ? 'shadow-custom-bottom' : '' } w-full h-16 bg-surface-background relative z-10 lg:shadow-custom-bottom` }	>
       <div className="mx-6 lg:mx-16 flex justify-between items-center " >
 
@@ -67,9 +67,9 @@ export default function NavBar() {
     </div>
     {/* Small screen navigation links */}
     <div className={`${visibility ? 'block' : 'hidden'}   `}>
-        <div className="fixed inset-0 bg-surface-background bg-opacity-60 backdrop-blur-sm top-16 z-10 w-screen "  onClick={toggleVisibility}>
+        <div className="fixed inset-0 bg-surface-background bg-opacity-60 backdrop-blur-sm top-16 z-10 w-screen h-full"  onClick={toggleVisibility}>
         </div>
-        <div className="bg-surface-secondary absolute right-0 z-10 w-60 h-full flex flex-col items-end  gap-12">
+        <div className="  bg-surface-secondary absolute right-0 z-10 w-60 h-full flex flex-col items-end  gap-12">
   <div onClick={toggleVisibility}>
     <Link href="/" className={`${visibility ? 'block' : 'hidden'} hover:font-semibold text-text-secondary text-sm pr-8 pt-12`}>
       Home
