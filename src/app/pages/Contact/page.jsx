@@ -55,7 +55,7 @@ export default function Contact() {
                 <Image src="/logo-github 1.svg" width={30} height={30} />
               </div>
             </Link>
-            <Link href="https://www.linkedin.com/in/sara-touahri-39284a2a4">
+            <Link href="https://www.linkedin.com/in/sara-touahri">
               <div className="w-10 h-10 cursor-pointer bg-surface-primary rounded-lg flex justify-center items-center">
                 <Image src="/logo-linkedin 1.svg" width={30} height={30} />
               </div>
