@@ -29,7 +29,7 @@ export default function Home(){
                             <div className="flex flex-row gap-10 ">
                                 <div className=" relative lg:left-4 bg-surface-secondary text-center text-white p-4 rounded-[9px] flex flex-row justify-center space-x-1 items-center lg:space-x-2  duration-300 border-[1px] border-surface-secondary hover:bg-surface-primary hover:border-white hover:border-[1px]">
                                     <Image src="/ReadCvLogo.svg" width={20} height={20}/>
-                                    <input type="submit" onClick={() => window.open('/CV_Touahri_sara.pdf')} value="My resume" className="cursor-pointer bg-transparent text-white"/>
+                                    <input type="submit" onClick={() => window.open('/cv_touahri_sara_anglais.pdf')} value="My resume" className="cursor-pointer bg-transparent text-white"/>
                                 </div>
                                 <Link href="/pages/Contact">
                                     <div className="relative lg:left-4 bg-button-primary-default text-white p-4 rounded-[9px] flex flex-row justify-center items-center space-x-1 lg:space-x-2 duration-300 border-[1px] border-button-primary-default hover:bg-button-primary-hover hover:border-white hover:border-[1px]">
