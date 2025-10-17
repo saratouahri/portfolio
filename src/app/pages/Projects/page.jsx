@@ -12,11 +12,7 @@ export default function Projects(){
    }
     return(
 
-<<<<<<< HEAD
-        <div className=" h-fit lg:h-screen  w-full bg-surface-background   ">
-=======
         <div className=" h-fit lg:h-full  w-full bg-surface-background   ">
->>>>>>> 4cf52a2ffa2d3f35e0388709a10b48dc5c14b140
             <Image src="/Graphic2.svg" width={80} height={80} className="mt-4 ml-[-20px] absolute  z-10"/>
             <div className="flex flex-col  items-center justify-center lg:justify-center gap-4 lg:gap-8  ">
                 <Image src="/Projects.svg" width={100} height={100} className="mt-8 lg:mt-4 "/>

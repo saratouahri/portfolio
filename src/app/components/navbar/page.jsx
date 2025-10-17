@@ -66,11 +66,7 @@ export default function NavBar() {
       </div>
     </div>
     {/* Small screen navigation links */}
-<<<<<<< HEAD
     <div className={`lg:hidden ${visibility ? 'block' : 'hidden'}   `}>
-=======
-    <div className={`${visibility ? 'block' : 'hidden'}   `}>
->>>>>>> 4cf52a2ffa2d3f35e0388709a10b48dc5c14b140
         <div className="fixed inset-0 bg-surface-background bg-opacity-60 backdrop-blur-sm top-16 z-10 w-screen h-full"  onClick={toggleVisibility}>
         </div>
         <div className="  bg-surface-secondary absolute right-0 z-10 w-60 h-full flex flex-col items-end  gap-12">
