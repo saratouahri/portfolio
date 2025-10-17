@@ -1,0 +1,34 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+
+  }
+}
+
+body {
+ font-family: heebo;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  .home-height {
+    height: calc(100vh - 4rem); /* 4rem is equivalent to h-16 in Tailwind CSS */
+  }
+  .hidden-element {
+    opacity: 0; /* Rendre l'élément invisible */
+    transition: opacity 0.3s; /* Ajouter une transition pour l'effet */
+}
+
+.container:hover .hidden-element {
+    opacity: 1; /* Rendre l'élément visible lors du survol */
+}
+}
