@@ -50,14 +50,14 @@ export default function Contact() {
             </p>
           </div>
           <div className=" flex flex-row lg:space-x-2  space-x-6">
-            <Link href="https://github.com/TouahriSara">
+            <Link href="https://github.com/saratouahri" target="_blank" rel="noreferrer">
               <div className="w-10 h-10 cursor-pointer bg-surface-primary rounded-lg flex justify-center items-center">
-                <Image src="/logo-github 1.svg" width={30} height={30} />
+                <Image src="/logo-github 1.svg" width={30} height={30} alt="GitHub" />
               </div>
             </Link>
-            <Link href="https://www.linkedin.com/in/sara-touahri">
+            <Link href="https://www.linkedin.com/in/touahri" target="_blank" rel="noreferrer">
               <div className="w-10 h-10 cursor-pointer bg-surface-primary rounded-lg flex justify-center items-center">
-                <Image src="/logo-linkedin 1.svg" width={30} height={30} />
+                <Image src="/logo-linkedin 1.svg" width={30} height={30} alt="LinkedIn" />
               </div>
             </Link>
             

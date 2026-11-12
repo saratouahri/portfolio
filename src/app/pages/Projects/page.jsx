@@ -1,67 +1,162 @@
-"use client"
+"use client";
 
-import Image from "next/image"
-import projects from "../../../../public/project"
-import { useRouter } from 'next/navigation';
+import { useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
+import ProjectCover from "../../components/ProjectCover";
+import projects from "../../../../public/project";
 
-export default function Projects(){
-   const router = useRouter();
-   const handleRedirect=(id)=>{
-        router.push(`/pages/ProjectDetails?id=${id}`)
-   }
-    return(
+const categories = ["All", "Web", "AI & ML", "Quantum", "Knowledge Systems", "Simulation"];
 
-        <div className=" h-fit lg:h-full  w-full bg-surface-background   ">
-            <Image src="/Graphic2.svg" width={80} height={80} className="mt-4 ml-[-20px] absolute  z-10"/>
-            <div className="flex flex-col  items-center justify-center lg:justify-center gap-4 lg:gap-8  ">
-                <Image src="/Projects.svg" width={100} height={100} className="mt-8 lg:mt-4 "/>
-            <h1 className="text-[20px] text-center text-white font-medium w-9/12 flex justify-center items-center lg:flex lg:justify-center lg:items-center lg:w-full">Take a look at my highlighted projects</h1>
+export default function Projects() {
+  const [activeCategory, setActiveCategory] = useState("All");
+  const visibleProjects = activeCategory === "All"
+    ? projects
+    : projects.filter((project) => project.category === activeCategory);
 
-            <div className="flex flex-col lg:flex-row gap-8 m-6 lg:m-0 ">
-            {projects.map((project) => (
+  return (
+    <section className="relative w-full overflow-hidden bg-surface-background px-6 py-12 lg:px-16 lg:py-16">
+      <Image
+        src="/Graphic2.svg"
+        width={80}
+        height={80}
+        className="absolute -left-5 top-4 z-0 opacity-80"
+        alt=""
+      />
 
-                <div key={project.id} className="relative bg-surface-secondary w-80 h-72 rounded-[10px] flex flex-col items-center border-2 border-surface-secondary hover:shadow-shadow-card hover:border-[#7BFFAF] hover:border-2 group">
-                    <div className="w-72 h-36 rounded-tr-lg rounded-tl-lg mt-4" style={{ backgroundImage: 'linear-gradient(to right, #9955E8, #7BFFAF)' }}>
-                        <Image src={project.cover_photo} width={230} height={400} className="mt-4 ml-7 rounded-lg" />
-                    </div>
-                    <div className="flex flex-row mt-4 ml-4 w-72">
-                    <p className="text-text-secondary text-[12px] mr-36">{project.date}</p>
-                    {project.frameworks.slice(0, 2).map((framework)=>(
-                    <div  key={framework.id} className="ml-[2px]" >
-                      
-                        <Image src={framework.nom} width={20} height={20} />
-                      
-                    </div>
-                    ))}
-                    </div>   
-                    <div className="flex flex-col justify-start gap-2 mt-4 w-72 ">
-                        <div className="ml-2">
-                        <h1 className="text-[20px] text-white font-medium ">{project.name}</h1>
-                        </div>
-                        <div className="ml-2">
-                        <p className="text-text-secondary text-[12px] ">{project.type}</p>
-                        </div>
-                    </div>
-                    <div className="absolute top-4 right-4 flex flex-col space-y-2 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
-                        <div className="w-10 h-10 cursor-pointer bg-surface-primary rounded-lg flex justify-center items-center ">
-                           <Link href={project.github_link}>
-                            <Image src="/logo-github 1.svg" width={30} height={30} />
-                            </Link>
-                        </div>
-                        <div onClick={() => handleRedirect(project.id)} className="w-10 h-10 cursor-pointer bg-surface-primary rounded-lg flex justify-center items-center">
-                            <Image src="/ArrowUpRight.svg" width={30} height={30} />
+      <div className="relative z-[1] mx-auto flex max-w-6xl flex-col items-center">
+        <Image src="/Projects.svg" width={100} height={100} alt="Projects" />
+        <p className="mt-4 text-xs font-medium uppercase tracking-[0.28em] text-[#7BFFAF]">
+          Selected work
+        </p>
+        <h1 className="mt-3 text-center text-2xl font-semibold text-white lg:text-3xl">
+          Projects built across software, AI, and research
+        </h1>
+        <p className="mt-4 max-w-2xl text-center text-sm leading-6 text-text-secondary">
+          From full-stack products to multimodal AI, knowledge graphs, quantum
+          computing, and agent-based simulations.
+        </p>
 
-                        </div>
-                    </div>
-                </div>
-            ))}  
-            </div>
-            
-            </div>
-            <Image src="/Graphic3.svg" width={50} height={50} className=" relative float-end "/>
-
-        
+        <div className="mt-7 flex flex-wrap justify-center gap-3 text-xs">
+          <span className="rounded-full border border-[#4E4563] bg-surface-secondary px-4 py-2 text-white">
+            <strong className="mr-1 text-[#7BFFAF]">{projects.length}</strong> projects
+          </span>
+          <span className="rounded-full border border-[#4E4563] bg-surface-secondary px-4 py-2 text-white">
+            <strong className="mr-1 text-[#C59BFF]">5</strong> disciplines
+          </span>
+          <a
+            href="https://github.com/saratouahri"
+            target="_blank"
+            rel="noreferrer"
+            className="rounded-full border border-[#4E4563] bg-surface-secondary px-4 py-2 text-white transition hover:border-[#7BFFAF]"
+          >
+            Explore GitHub ↗
+          </a>
         </div>
-    )
+
+        <div className="mt-10 flex w-full flex-wrap justify-center gap-2" role="group" aria-label="Filter projects by discipline">
+          {categories.map((category) => {
+            const count = category === "All"
+              ? projects.length
+              : projects.filter((project) => project.category === category).length;
+            const isActive = activeCategory === category;
+
+            return (
+              <button
+                key={category}
+                type="button"
+                onClick={() => setActiveCategory(category)}
+                className={`rounded-lg border px-4 py-2 text-xs transition ${
+                  isActive
+                    ? "border-[#7BFFAF] bg-[#7BFFAF] font-semibold text-[#171023]"
+                    : "border-[#4E4563] bg-surface-secondary text-text-secondary hover:border-[#7BFFAF] hover:text-white"
+                }`}
+                aria-pressed={isActive}
+              >
+                {category} <span className={isActive ? "text-[#171023]/60" : "text-white/40"}>{count}</span>
+              </button>
+            );
+          })}
+        </div>
+
+        <div className="mt-8 grid w-full grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3">
+          {visibleProjects.map((project) => (
+            <article
+              key={project.id}
+              className="group relative mx-auto flex h-full w-full max-w-[360px] flex-col overflow-hidden rounded-xl border border-[#403650] bg-surface-secondary transition duration-300 hover:-translate-y-1 hover:border-[#7BFFAF] hover:shadow-shadow-card"
+            >
+              <div className="relative h-44 w-full overflow-hidden bg-gradient-to-r from-[#9955E8] to-[#7BFFAF]">
+                <ProjectCover
+                  project={project}
+                  sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
+                />
+
+                <div className="absolute right-3 top-3 z-20 flex gap-2">
+                  <Link
+                    href={project.github_link}
+                    target="_blank"
+                    rel="noreferrer"
+                    aria-label={`View ${project.name} source code on GitHub`}
+                    className="flex h-10 w-10 items-center justify-center rounded-lg border border-white/10 bg-surface-background/90 shadow-shadow2 transition hover:bg-surface-primary"
+                  >
+                    <Image src="/logo-github 1.svg" width={25} height={25} alt="" />
+                  </Link>
+                  <Link
+                    href={`/pages/ProjectDetails?id=${project.id}`}
+                    aria-label={`Read more about ${project.name}`}
+                    className="flex h-10 w-10 items-center justify-center rounded-lg border border-white/10 bg-surface-background/90 shadow-shadow2 transition hover:bg-surface-primary"
+                  >
+                    <Image src="/ArrowUpRight.svg" width={25} height={25} alt="" />
+                  </Link>
+                </div>
+              </div>
+
+              <div className="flex flex-1 flex-col p-5">
+                <div className="flex items-center justify-between gap-3">
+                  <span className="rounded-full bg-surface-background px-2.5 py-1 text-[10px] font-medium text-[#BFA7E6]">
+                    {project.category}
+                  </span>
+                  <p className="text-[11px] text-text-secondary">{project.date}</p>
+                </div>
+                <h2 className="mt-4 text-xl font-medium text-white">{project.name}</h2>
+                <p className="mt-2 min-h-[40px] text-xs leading-5 text-text-secondary">
+                  {project.type}
+                </p>
+
+                <div className="mt-5 flex flex-wrap gap-2">
+                  {project.stack.slice(0, 3).map((technology) => (
+                    <span
+                      key={technology}
+                      className="rounded-md border border-[#5A4B70] bg-surface-background px-2.5 py-1 text-[10px] text-text-secondary"
+                    >
+                      {technology}
+                    </span>
+                  ))}
+                </div>
+
+                <Link
+                  href={`/pages/ProjectDetails?id=${project.id}`}
+                  className="mt-6 inline-flex items-center gap-2 text-xs font-medium text-[#7BFFAF] transition group-hover:gap-3"
+                >
+                  View project <span aria-hidden="true">→</span>
+                </Link>
+              </div>
+            </article>
+          ))}
+        </div>
+
+        <p className="mt-8 text-xs text-text-secondary" aria-live="polite">
+          Showing {visibleProjects.length} of {projects.length} projects
+        </p>
+      </div>
+
+      <Image
+        src="/Graphic3.svg"
+        width={60}
+        height={60}
+        className="absolute -bottom-2 right-0 opacity-80"
+        alt=""
+      />
+    </section>
+  );
 }

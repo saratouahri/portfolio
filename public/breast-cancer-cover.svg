@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 400" role="img" aria-labelledby="title desc">
+  <title id="title">Explainable breast cancer detection illustration</title>
+  <desc id="desc">A stylised medical scan, neural network, and model explanation chart.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#3B163E"/>
+      <stop offset="1" stop-color="#171023"/>
+    </linearGradient>
+    <radialGradient id="scan">
+      <stop stop-color="#FFB4DC"/>
+      <stop offset=".45" stop-color="#A8478C"/>
+      <stop offset="1" stop-color="#3B1839"/>
+    </radialGradient>
+  </defs>
+  <rect width="720" height="400" rx="30" fill="url(#bg)"/>
+  <text x="44" y="66" fill="#fff" font-family="Arial, sans-serif" font-size="24" font-weight="700">Multimodal diagnosis</text>
+  <text x="44" y="92" fill="#CDBFD3" font-family="Arial, sans-serif" font-size="13">Image + tabular model explanations</text>
+  <rect x="42" y="119" width="231" height="235" rx="20" fill="#2C243B" stroke="#664A6A" stroke-width="2"/>
+  <circle cx="158" cy="225" r="78" fill="url(#scan)"/>
+  <g fill="none" stroke="#FFD7ED" opacity=".6">
+    <path d="M103 216c28-44 70-46 109-9s-2 83-39 81-95-31-70-72Z"/>
+    <path d="M130 178c19 12 29 39 17 61s8 40 31 32"/>
+  </g>
+  <circle cx="194" cy="197" r="13" fill="#7BFFAF" stroke="#fff" stroke-width="3"/>
+  <rect x="299" y="119" width="379" height="112" rx="20" fill="#2C243B"/>
+  <text x="323" y="151" fill="#fff" font-family="Arial, sans-serif" font-size="15" font-weight="700">Model confidence</text>
+  <rect x="323" y="175" width="319" height="16" rx="8" fill="#4A3D58"/>
+  <rect x="323" y="175" width="244" height="16" rx="8" fill="#7BFFAF"/>
+  <text x="577" y="190" fill="#fff" font-family="Arial, sans-serif" font-size="14">76%</text>
+  <rect x="299" y="251" width="379" height="103" rx="20" fill="#2C243B"/>
+  <text x="323" y="282" fill="#fff" font-family="Arial, sans-serif" font-size="15" font-weight="700">Feature contribution</text>
+  <g>
+    <rect x="323" y="304" width="142" height="9" rx="4" fill="#9955E8"/>
+    <rect x="323" y="322" width="222" height="9" rx="4" fill="#D46AA4"/>
+    <rect x="323" y="340" width="91" height="9" rx="4" fill="#7BFFAF"/>
+  </g>
+</svg>

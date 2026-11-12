@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 400" role="img" aria-labelledby="title desc">
+  <title id="title">Fraud Lens Copilot illustration</title>
+  <desc id="desc">A financial transaction dashboard inspected through an analysis lens.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#132C3A"/>
+      <stop offset="1" stop-color="#171023"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#7BFFAF"/>
+      <stop offset="1" stop-color="#9955E8"/>
+    </linearGradient>
+  </defs>
+  <rect width="720" height="400" rx="30" fill="url(#bg)"/>
+  <text x="42" y="62" fill="#fff" font-family="Arial, sans-serif" font-size="24" font-weight="700">Fraud Lens</text>
+  <text x="42" y="88" fill="#AFC5C9" font-family="Arial, sans-serif" font-size="13">AI-assisted transaction review</text>
+  <rect x="42" y="116" width="430" height="238" rx="20" fill="#222438" stroke="#3D5060" stroke-width="2"/>
+  <g fill="#77808C">
+    <rect x="68" y="145" width="86" height="8" rx="4"/>
+    <rect x="285" y="145" width="61" height="8" rx="4"/>
+    <rect x="385" y="145" width="51" height="8" rx="4"/>
+  </g>
+  <g>
+    <rect x="68" y="178" width="368" height="39" rx="9" fill="#2F3148"/>
+    <rect x="68" y="228" width="368" height="39" rx="9" fill="#432D46"/>
+    <rect x="68" y="278" width="368" height="39" rx="9" fill="#2F3148"/>
+    <circle cx="92" cy="197" r="8" fill="#7BFFAF"/>
+    <circle cx="92" cy="247" r="8" fill="#FF6D93"/>
+    <circle cx="92" cy="297" r="8" fill="#7BFFAF"/>
+    <rect x="117" y="192" width="92" height="9" rx="4" fill="#8E8BA0"/>
+    <rect x="117" y="242" width="121" height="9" rx="4" fill="#D5A2B5"/>
+    <rect x="117" y="292" width="75" height="9" rx="4" fill="#8E8BA0"/>
+  </g>
+  <circle cx="545" cy="202" r="92" fill="#1F283B" stroke="url(#accent)" stroke-width="12"/>
+  <path d="M609 269 678 338" stroke="url(#accent)" stroke-width="20" stroke-linecap="round"/>
+  <polyline points="488,220 519,189 548,213 598,158" fill="none" stroke="#7BFFAF" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="598" cy="158" r="10" fill="#FF6D93" stroke="#fff" stroke-width="3"/>
+  <rect x="489" y="284" width="123" height="28" rx="14" fill="#3D334C"/>
+  <text x="507" y="303" fill="#fff" font-family="Arial, sans-serif" font-size="12">Risk detected</text>
+</svg>

@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 400" role="img" aria-labelledby="title desc">
+  <title id="title">ERP CRM dashboard illustration</title>
+  <desc id="desc">A stylised enterprise dashboard with navigation, statistics, charts, and data rows.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#2C1747"/>
+      <stop offset="1" stop-color="#171023"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop stop-color="#9955E8"/>
+      <stop offset="1" stop-color="#7BFFAF"/>
+    </linearGradient>
+  </defs>
+  <rect width="720" height="400" rx="30" fill="url(#bg)"/>
+  <rect x="34" y="32" width="652" height="336" rx="20" fill="#211932" stroke="#493B61" stroke-width="2"/>
+  <rect x="34" y="32" width="142" height="336" rx="20" fill="#2C243B"/>
+  <circle cx="73" cy="75" r="13" fill="#7BFFAF"/>
+  <text x="98" y="82" fill="#fff" font-family="Arial, sans-serif" font-size="21" font-weight="700">ERP DZ</text>
+  <g fill="#817590">
+    <rect x="60" y="118" width="88" height="9" rx="4"/>
+    <rect x="60" y="155" width="70" height="9" rx="4"/>
+    <rect x="60" y="192" width="95" height="9" rx="4"/>
+    <rect x="60" y="229" width="76" height="9" rx="4"/>
+    <rect x="60" y="266" width="86" height="9" rx="4"/>
+  </g>
+  <text x="207" y="78" fill="#fff" font-family="Arial, sans-serif" font-size="22" font-weight="700">Overview</text>
+  <g>
+    <rect x="207" y="103" width="133" height="68" rx="13" fill="#342A45"/>
+    <rect x="354" y="103" width="133" height="68" rx="13" fill="#342A45"/>
+    <rect x="501" y="103" width="152" height="68" rx="13" fill="#342A45"/>
+    <rect x="225" y="122" width="46" height="7" rx="3" fill="#817590"/>
+    <rect x="372" y="122" width="55" height="7" rx="3" fill="#817590"/>
+    <rect x="519" y="122" width="62" height="7" rx="3" fill="#817590"/>
+    <text x="225" y="153" fill="#7BFFAF" font-family="Arial, sans-serif" font-size="22" font-weight="700">128</text>
+    <text x="372" y="153" fill="#C69AFF" font-family="Arial, sans-serif" font-size="22" font-weight="700">42</text>
+    <text x="519" y="153" fill="#fff" font-family="Arial, sans-serif" font-size="22" font-weight="700">2.4M</text>
+  </g>
+  <rect x="207" y="190" width="279" height="146" rx="14" fill="#342A45"/>
+  <polyline points="229,299 270,272 311,285 352,236 393,252 436,212 465,225" fill="none" stroke="url(#accent)" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+  <g fill="#67597B">
+    <rect x="519" y="199" width="134" height="15" rx="7"/>
+    <rect x="519" y="232" width="104" height="11" rx="5"/>
+    <rect x="519" y="261" width="121" height="11" rx="5"/>
+    <rect x="519" y="290" width="91" height="11" rx="5"/>
+    <rect x="519" y="319" width="113" height="11" rx="5"/>
+  </g>
+</svg>
