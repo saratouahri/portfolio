@@ -1,107 +1,118 @@
 "use client";
 
-import Image from 'next/image';
-import Link from 'next/link';
-import { useEffect } from 'react';
-import emailjs from 'emailjs-com';
-
+import { useEffect, useState } from "react";
+import Image from "next/image";
+import emailjs from "emailjs-com";
+import { profile } from "../../data/profile";
 
 export default function Contact() {
+  const [status, setStatus] = useState("idle");
 
   useEffect(() => {
-    emailjs.init('j-PE1Tl4YIEGpVPzJ'); 
+    emailjs.init("j-PE1Tl4YIEGpVPzJ");
   }, []);
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
-    emailjs.sendForm('service_tv12bji', 'template_0j1nkxi', event.target)
-      .then((response) => {
-        console.log('Email sent!', response.status, response.text);
-        alert('Email sent successfully!');
-        
-      }, (error) => {
-        console.error('Error sending email:', error);
-        alert('Oops! Something went wrong.');
-      });
+    setStatus("sending");
+
+    try {
+      await emailjs.sendForm("service_tv12bji", "template_0j1nkxi", event.currentTarget);
+      event.currentTarget.reset();
+      setStatus("success");
+    } catch (error) {
+      console.error("Error sending email:", error);
+      setStatus("error");
+    }
   };
 
   return (
-    <div className="h-fit lg:h-screen w-full bg-surface-secondary  lg:bg-surface-background flex  justify-center items-center ">
-      <div className=" lg:w-11/12 lg:h-5/6 lg:bg-surface-secondary lg:rounded-[9px] flex  lg:flex-row  lg:gap-12 flex-col h-fit">
-        <div className="flex flex-col ml-8 lg:ml-24 mt-10 gap-5">
-          <Image src="/Avatar.svg" width={210} height={210} alt="Avatar" />
-          <Image src="/Contact.svg" width={50} height={50} alt="Contact" />
-          <div>
-            <h1 className="text-[20px] text-white font-medium">
-              Enjoyed my work? Let’s work together
-            </h1>
-            <p className="text-[14px] text-white font-normal">
-              I’m always up for a chat. Pop me an email at 
-              {' '}
-              <a
-                href="mailto:sarahtouahri97@gmail.com"
-                className="text-[#7BFFAF]"
-              >
-                sarahtouahri97@gmail.com
+    <main className="min-h-screen bg-surface-background px-6 py-14 lg:px-16 lg:py-20">
+      <div className="mx-auto grid max-w-6xl gap-10 lg:grid-cols-[.8fr_1.2fr] lg:gap-16">
+        <section className="lg:pt-8">
+          <p className="text-xs font-medium uppercase tracking-[0.28em] text-[#7BFFAF]">Contact</p>
+          <h1 className="mt-5 text-4xl font-semibold leading-tight text-white lg:text-5xl">
+            Let&apos;s build something thoughtful.
+          </h1>
+          <p className="mt-6 max-w-lg text-sm leading-7 text-text-secondary">
+            Whether you are hiring, exploring a research collaboration, or have a software problem worth discussing, send me a message and I will get back to you.
+          </p>
+
+          <div className="mt-10 space-y-4">
+            <a href={`mailto:${profile.email}`} className="block rounded-xl border border-[#403650] bg-surface-secondary p-5 transition hover:border-[#7BFFAF]">
+              <span className="text-[10px] uppercase tracking-[0.18em] text-[#817590]">Email</span>
+              <p className="mt-2 text-sm text-white">{profile.email}</p>
+            </a>
+            <div className="grid grid-cols-2 gap-4">
+              <a href={profile.github} target="_blank" rel="noreferrer" className="flex items-center gap-3 rounded-xl border border-[#403650] bg-surface-secondary p-4 text-sm text-white transition hover:border-[#7BFFAF]">
+                <Image src="/logo-github 1.svg" width={24} height={24} alt="" />
+                GitHub
               </a>
-              {' ,'}
-              <br/>
-              or give me a shout on social media.
-            </p>
-          </div>
-          <div className=" flex flex-row lg:space-x-2  space-x-6">
-            <Link href="https://github.com/saratouahri" target="_blank" rel="noreferrer">
-              <div className="w-10 h-10 cursor-pointer bg-surface-primary rounded-lg flex justify-center items-center">
-                <Image src="/logo-github 1.svg" width={30} height={30} alt="GitHub" />
-              </div>
-            </Link>
-            <Link href="https://www.linkedin.com/in/touahri" target="_blank" rel="noreferrer">
-              <div className="w-10 h-10 cursor-pointer bg-surface-primary rounded-lg flex justify-center items-center">
-                <Image src="/logo-linkedin 1.svg" width={30} height={30} alt="LinkedIn" />
-              </div>
-            </Link>
-            
-          </div>
-        </div>
-
-        <div className=" mt-6 lg:mt-16 ml-8  lg:w-full lg:max-w-sm  lg:h-10 ">
-          <form id="contact-form" onSubmit={handleSubmit}>
-            <input
-              type="text"
-              name="from_name"
-              placeholder="Name"
-              className=" w-11/12 lg:w-full p-2 mb-4 bg-surface-background rounded-xl  border-[1px] border-surface-background hover:border-[1px]  hover:border-[#7BFFAF] focus:border-[1px]  focus:border-[1px] focus:border-[#7BFFAF] focus:outline-none  text-white"
-            />
-            <input
-              type="email"
-              name="from_email"
-              placeholder="Email"
-              required
-              className=" w-11/12 lg:w-full p-2 mb-4 bg-surface-background rounded-xl  border-[1px] border-surface-background hover:border-[1px] hover:border-[#7BFFAF] focus:border-[1px]  focus:border-[1px] focus:border-[#7BFFAF] focus:outline-none text-white"
-            />
-           
-            <textarea
-              name="message"
-              placeholder="Message"
-              required
-              rows={5}
-              className="w-11/12 lg:w-full scroll-full h-40 p-2 mb-7 bg-surface-background rounded-xl text-white border-[1px] border-surface-background hover:border-[1px] hover:border-[#7BFFAF] focus:border-[1px] focus:border-[#7BFFAF] focus:outline-none text-white"
-            >
-
-            </textarea>
-           
-            <div className="lg:mb-0 mb-10 block bg-button-primary-default w-fit text-white p-3 rounded-[9px] flex flex-row space-x-2 transition-all duration-300 hover:bg-button-primary-hover border-[1px] border-button-primary-default hover:border-white hover:border-[1px] ">
-              <button
-                type="submit"
-                className="cursor-pointer outline-none border-none bg-transparent text-white"
-              > 
-                Send me a message
-              </button>
-              <Image src="/ArrowRight.png" width={20} height={20} />
+              <a href={profile.linkedin} target="_blank" rel="noreferrer" className="flex items-center gap-3 rounded-xl border border-[#403650] bg-surface-secondary p-4 text-sm text-white transition hover:border-[#7BFFAF]">
+                <Image src="/logo-linkedin 1.svg" width={24} height={24} alt="" />
+                LinkedIn
+              </a>
             </div>
+          </div>
+        </section>
+
+        <section className="rounded-2xl border border-[#403650] bg-surface-secondary p-6 sm:p-9">
+          <h2 className="text-xl font-semibold text-white">Send a message</h2>
+          <p className="mt-2 text-xs leading-5 text-text-secondary">Tell me a little about you and what you would like to discuss.</p>
+
+          <form className="mt-8 space-y-5" onSubmit={handleSubmit}>
+            <div>
+              <label htmlFor="from_name" className="mb-2 block text-xs font-medium text-[#D6D1DC]">Name</label>
+              <input
+                id="from_name"
+                type="text"
+                name="from_name"
+                required
+                placeholder="Your name"
+                className="w-full rounded-lg border border-[#4E4563] bg-surface-background px-4 py-3 text-sm text-white outline-none transition placeholder:text-[#6F667B] focus:border-[#7BFFAF]"
+              />
+            </div>
+            <div>
+              <label htmlFor="from_email" className="mb-2 block text-xs font-medium text-[#D6D1DC]">Email</label>
+              <input
+                id="from_email"
+                type="email"
+                name="from_email"
+                required
+                placeholder="you@example.com"
+                className="w-full rounded-lg border border-[#4E4563] bg-surface-background px-4 py-3 text-sm text-white outline-none transition placeholder:text-[#6F667B] focus:border-[#7BFFAF]"
+              />
+            </div>
+            <div>
+              <label htmlFor="message" className="mb-2 block text-xs font-medium text-[#D6D1DC]">Message</label>
+              <textarea
+                id="message"
+                name="message"
+                required
+                rows={7}
+                placeholder="What would you like to build or discuss?"
+                className="w-full resize-none rounded-lg border border-[#4E4563] bg-surface-background px-4 py-3 text-sm text-white outline-none transition placeholder:text-[#6F667B] focus:border-[#7BFFAF]"
+              />
+            </div>
+
+            <button
+              type="submit"
+              disabled={status === "sending"}
+              className="inline-flex items-center gap-3 rounded-lg bg-[#8A42DB] px-5 py-3 text-sm font-medium text-white transition hover:bg-[#9955E8] disabled:cursor-wait disabled:opacity-60"
+            >
+              {status === "sending" ? "Sending..." : "Send message"}
+              <Image src="/ArrowRight.svg" width={18} height={18} alt="" />
+            </button>
+
+            {status === "success" && (
+              <p className="text-sm text-[#7BFFAF]" role="status">Your message was sent successfully.</p>
+            )}
+            {status === "error" && (
+              <p className="text-sm text-[#FF8FA3]" role="alert">The message could not be sent. Please email me directly instead.</p>
+            )}
           </form>
-        </div>
+        </section>
       </div>
-    </div>
+    </main>
   );
 }

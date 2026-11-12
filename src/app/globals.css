@@ -16,6 +16,16 @@ body {
  font-family: heebo;
 }
 
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 72px;
+}
+
+::selection {
+  background: #7BFFAF;
+  color: #171023;
+}
+
 @layer utilities {
   .text-balance {
     text-wrap: balance;

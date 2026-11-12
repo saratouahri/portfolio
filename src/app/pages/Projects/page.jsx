@@ -7,15 +7,19 @@ import ProjectCover from "../../components/ProjectCover";
 import projects from "../../../../public/project";
 
 const categories = ["All", "Web", "AI & ML", "Quantum", "Knowledge Systems", "Simulation"];
+const featuredProjectIds = [4, 5, 6, 12, 15, 19];
 
-export default function Projects() {
+export default function Projects({ featured = false }) {
   const [activeCategory, setActiveCategory] = useState("All");
+  const projectCollection = featured
+    ? projects.filter((project) => featuredProjectIds.includes(project.id))
+    : projects;
   const visibleProjects = activeCategory === "All"
-    ? projects
-    : projects.filter((project) => project.category === activeCategory);
+    ? projectCollection
+    : projectCollection.filter((project) => project.category === activeCategory);
 
   return (
-    <section className="relative w-full overflow-hidden bg-surface-background px-6 py-12 lg:px-16 lg:py-16">
+    <section id="projects" className="relative w-full overflow-hidden bg-surface-background px-6 py-20 lg:px-16 lg:py-28">
       <Image
         src="/Graphic2.svg"
         width={80}
@@ -27,19 +31,22 @@ export default function Projects() {
       <div className="relative z-[1] mx-auto flex max-w-6xl flex-col items-center">
         <Image src="/Projects.svg" width={100} height={100} alt="Projects" />
         <p className="mt-4 text-xs font-medium uppercase tracking-[0.28em] text-[#7BFFAF]">
-          Selected work
+          {featured ? "Featured work" : "Project archive"}
         </p>
         <h1 className="mt-3 text-center text-2xl font-semibold text-white lg:text-3xl">
-          Projects built across software, AI, and research
+          {featured
+            ? "Selected projects across engineering and research"
+            : "Projects built across software, AI, and research"}
         </h1>
         <p className="mt-4 max-w-2xl text-center text-sm leading-6 text-text-secondary">
-          From full-stack products to multimodal AI, knowledge graphs, quantum
-          computing, and agent-based simulations.
+          {featured
+            ? "A focused selection of product, machine-learning, knowledge-system, and simulation work."
+            : "From full-stack products to multimodal AI, knowledge graphs, quantum computing, and agent-based simulations."}
         </p>
 
         <div className="mt-7 flex flex-wrap justify-center gap-3 text-xs">
           <span className="rounded-full border border-[#4E4563] bg-surface-secondary px-4 py-2 text-white">
-            <strong className="mr-1 text-[#7BFFAF]">{projects.length}</strong> projects
+            <strong className="mr-1 text-[#7BFFAF]">{featured ? projectCollection.length : projects.length}</strong> {featured ? "featured projects" : "projects"}
           </span>
           <span className="rounded-full border border-[#4E4563] bg-surface-secondary px-4 py-2 text-white">
             <strong className="mr-1 text-[#C59BFF]">5</strong> disciplines
@@ -54,6 +61,7 @@ export default function Projects() {
           </a>
         </div>
 
+        {!featured && (
         <div className="mt-10 flex w-full flex-wrap justify-center gap-2" role="group" aria-label="Filter projects by discipline">
           {categories.map((category) => {
             const count = category === "All"
@@ -78,6 +86,7 @@ export default function Projects() {
             );
           })}
         </div>
+        )}
 
         <div className="mt-8 grid w-full grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3">
           {visibleProjects.map((project) => (
@@ -145,9 +154,18 @@ export default function Projects() {
           ))}
         </div>
 
-        <p className="mt-8 text-xs text-text-secondary" aria-live="polite">
-          Showing {visibleProjects.length} of {projects.length} projects
-        </p>
+        {featured ? (
+          <Link
+            href="/pages/Projects"
+            className="mt-10 rounded-lg border border-[#4E4563] bg-surface-secondary px-5 py-3 text-sm text-white transition hover:border-[#7BFFAF]"
+          >
+            View all {projects.length} projects
+          </Link>
+        ) : (
+          <p className="mt-8 text-xs text-text-secondary" aria-live="polite">
+            Showing {visibleProjects.length} of {projects.length} projects
+          </p>
+        )}
       </div>
 
       <Image

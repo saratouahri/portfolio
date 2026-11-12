@@ -7,16 +7,16 @@ const montserrat = Montserrat({
   subsets: ['latin'],
 });
 export const metadata = {
-  title: "Portfolio",
-  description: "",
+  title: "Sara Touahri | Software Engineer",
+  description: "Personal website of Sara Touahri, a Software Engineer working across full-stack development, machine learning, and semantic systems.",
 };
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={montserrat.className}>
-      <NavBar/>
+      <body className={`${montserrat.className} bg-surface-background`}>
+      <NavBar />
         {children}
-      <Footer/>
+      <Footer />
       </body>
     </html>
   );
