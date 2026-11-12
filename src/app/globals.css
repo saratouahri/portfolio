@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 :root {
-
+  color-scheme: dark;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -13,7 +13,10 @@
 }
 
 body {
- font-family: heebo;
+  min-height: 100vh;
+  overflow-x: hidden;
+  font-family: heebo;
+  background: #171023;
 }
 
 html {
@@ -24,6 +27,120 @@ html {
 ::selection {
   background: #7BFFAF;
   color: #171023;
+}
+
+.hero-grid {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
+  background-size: 46px 46px;
+  -webkit-mask-image: linear-gradient(to bottom, black 15%, transparent 92%);
+  mask-image: linear-gradient(to bottom, black 15%, transparent 92%);
+}
+
+.tilt-card {
+  transform-style: preserve-3d;
+  transform: perspective(1000px) rotateX(0deg) rotateY(0deg) translateY(0);
+  transition: transform 180ms ease-out, filter 250ms ease, box-shadow 250ms ease;
+  will-change: transform;
+}
+
+.tilt-card:hover {
+  filter: saturate(1.06);
+}
+
+.tilt-card [data-depth="1"] {
+  transform: translateZ(16px);
+}
+
+.tilt-card [data-depth="2"] {
+  transform: translateZ(28px);
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(28px) scale(0.985);
+  transition: opacity 700ms cubic-bezier(0.22, 1, 0.36, 1),
+    transform 700ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+.gradient-text-animated {
+  background-size: 200% auto;
+  animation: gradient-shift 6s ease-in-out infinite;
+}
+
+.floating-slow {
+  animation: floating 6s ease-in-out infinite;
+}
+
+.floating-delayed {
+  animation: floating 7s ease-in-out 1.2s infinite;
+}
+
+.pulse-ring {
+  animation: pulse-ring 2.4s ease-out infinite;
+}
+
+.shine-button {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+}
+
+.shine-button::after {
+  position: absolute;
+  inset: 0;
+  content: "";
+  background: linear-gradient(110deg, transparent 25%, rgba(255, 255, 255, 0.22) 45%, transparent 65%);
+  transform: translateX(-130%);
+  transition: transform 650ms ease;
+  pointer-events: none;
+}
+
+.shine-button:hover::after {
+  transform: translateX(130%);
+}
+
+@keyframes floating {
+  0%, 100% { transform: translate3d(0, 0, 0); }
+  50% { transform: translate3d(0, -12px, 0); }
+}
+
+@keyframes gradient-shift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+@keyframes pulse-ring {
+  0% { transform: scale(0.72); opacity: 0.65; }
+  100% { transform: scale(1.75); opacity: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *, *::before, *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .reveal {
+    opacity: 1;
+    transform: none;
+  }
+
+  .tilt-card {
+    transform: none !important;
+  }
 }
 
 @layer utilities {

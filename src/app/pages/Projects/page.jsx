@@ -4,6 +4,8 @@ import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import ProjectCover from "../../components/ProjectCover";
+import TiltCard from "../../components/ui/TiltCard";
+import Reveal from "../../components/ui/Reveal";
 import projects from "../../../../public/project";
 
 const categories = ["All", "Web", "AI & ML", "Quantum", "Knowledge Systems", "Simulation"];
@@ -89,11 +91,10 @@ export default function Projects({ featured = false }) {
         )}
 
         <div className="mt-8 grid w-full grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3">
-          {visibleProjects.map((project) => (
-            <article
-              key={project.id}
-              className="group relative mx-auto flex h-full w-full max-w-[360px] flex-col overflow-hidden rounded-xl border border-[#403650] bg-surface-secondary transition duration-300 hover:-translate-y-1 hover:border-[#7BFFAF] hover:shadow-shadow-card"
-            >
+          {visibleProjects.map((project, index) => (
+            <Reveal key={project.id} delay={(index % 3) * 70} className="mx-auto h-full w-full max-w-[360px]">
+            <TiltCard intensity={6} className="h-full rounded-xl">
+            <article className="group relative flex h-full w-full flex-col overflow-hidden rounded-xl border border-[#403650] bg-surface-secondary transition duration-300 hover:border-[#7BFFAF] hover:shadow-[0_22px_70px_rgba(123,255,175,.13)]">
               <div className="relative h-44 w-full overflow-hidden bg-gradient-to-r from-[#9955E8] to-[#7BFFAF]">
                 <ProjectCover
                   project={project}
@@ -127,7 +128,7 @@ export default function Projects({ featured = false }) {
                   </span>
                   <p className="text-[11px] text-text-secondary">{project.date}</p>
                 </div>
-                <h2 className="mt-4 text-xl font-medium text-white">{project.name}</h2>
+                <h2 data-depth="1" className="mt-4 text-xl font-medium text-white">{project.name}</h2>
                 <p className="mt-2 min-h-[40px] text-xs leading-5 text-text-secondary">
                   {project.type}
                 </p>
@@ -151,6 +152,8 @@ export default function Projects({ featured = false }) {
                 </Link>
               </div>
             </article>
+            </TiltCard>
+            </Reveal>
           ))}
         </div>
 
