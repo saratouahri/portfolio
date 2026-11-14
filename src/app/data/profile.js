@@ -141,6 +141,30 @@ export const languages = [
   { name: "French", level: "Fluent" },
 ];
 
+export const certifications = [
+  {
+    name: "Generative AI with Large Language Models",
+    issuer: "DeepLearning.AI · Amazon Web Services",
+    issued: "Jun 2026",
+    credentialId: "8VPUR7JGZ1TD",
+    url: "https://www.coursera.org/account/accomplishments/records/8VPUR7JGZ1TD",
+  },
+  {
+    name: "Machine Learning with Python",
+    issuer: "IBM",
+    issued: "Jun 2026",
+    credentialId: "7IHEVJ5D07LA",
+    url: "https://www.coursera.org/account/accomplishments/records/7IHEVJ5D07LA",
+  },
+  {
+    name: "Grammar and Punctuation",
+    issuer: "University of California, Irvine",
+    issued: "Jun 2026",
+    credentialId: "2JA3Y64OHPBR",
+    url: "https://www.coursera.org/account/accomplishments/records/2JA3Y64OHPBR",
+  },
+];
+
 export const volunteering = {
   organisation: "ByteCraft Club",
   role: "Active member",

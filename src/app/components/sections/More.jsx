@@ -1,4 +1,4 @@
-import { languages, volunteering } from "../../data/profile";
+import { certifications, languages, volunteering } from "../../data/profile";
 import Reveal from "../ui/Reveal";
 import SectionLabel from "../ui/SectionLabel";
 import TiltCard from "../ui/TiltCard";
@@ -12,10 +12,10 @@ export default function More() {
         <Reveal className="max-w-2xl">
           <SectionLabel>More</SectionLabel>
           <h2 className="mt-4 text-3xl font-semibold leading-tight text-white lg:text-4xl">
-            The person around the engineering.
+            What else shapes the engineer behind the work?
           </h2>
           <p className="mt-4 text-sm leading-7 text-text-secondary">
-            A little more context on how I communicate, contribute, and stay curious beyond project work.
+            Languages, community, and continued learning add more context to the profile beyond project work.
           </p>
         </Reveal>
 
@@ -62,6 +62,63 @@ export default function More() {
             </TiltCard>
           </Reveal>
         </div>
+
+        <Reveal delay={140} className="mt-5">
+          <article className="rounded-2xl border border-[#403650] bg-surface-secondary p-6 sm:p-8">
+            <div className="flex flex-col gap-3 border-b border-[#403650] pb-6 sm:flex-row sm:items-end sm:justify-between">
+              <div>
+                <p className="text-xs font-medium uppercase tracking-[0.2em] text-[#BFA7E6]">
+                  Certifications
+                </p>
+                <h3 className="mt-2 text-xl font-semibold text-white">
+                  Learning that keeps the toolkit moving forward.
+                </h3>
+              </div>
+              <a
+                href="https://www.linkedin.com/in/touahri/details/certifications/"
+                target="_blank"
+                rel="noreferrer"
+                className="text-xs font-medium text-[#7BFFAF] transition hover:text-white"
+              >
+                View on LinkedIn <span aria-hidden="true">↗</span>
+              </a>
+            </div>
+
+            <div className="mt-6 grid gap-4 md:grid-cols-3">
+              {certifications.map((certification, index) => (
+                <a
+                  key={certification.credentialId}
+                  href={certification.url}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="group flex min-h-56 flex-col rounded-xl border border-[#4E4563] bg-surface-background p-5 transition hover:-translate-y-1 hover:border-[#7BFFAF] hover:shadow-[0_16px_45px_rgba(123,255,175,.09)]"
+                >
+                  <div className="flex items-center justify-between">
+                    <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-[#7BFFAF]/10 text-xs font-semibold text-[#7BFFAF]">
+                      {String(index + 1).padStart(2, "0")}
+                    </span>
+                    <span className="text-[11px] text-[#BFA7E6]">{certification.issued}</span>
+                  </div>
+                  <h4 className="mt-5 text-base font-semibold leading-6 text-white transition group-hover:text-[#7BFFAF]">
+                    {certification.name}
+                  </h4>
+                  <p className="mt-2 text-xs leading-5 text-text-secondary">
+                    {certification.issuer}
+                  </p>
+                  <div className="mt-auto flex items-end justify-between gap-3 pt-6">
+                    <div>
+                      <p className="text-[9px] uppercase tracking-[0.16em] text-[#817590]">Credential ID</p>
+                      <p className="mt-1 text-[10px] text-text-secondary">{certification.credentialId}</p>
+                    </div>
+                    <span className="text-xs font-medium text-[#7BFFAF]">
+                      Verify <span aria-hidden="true">↗</span>
+                    </span>
+                  </div>
+                </a>
+              ))}
+            </div>
+          </article>
+        </Reveal>
       </div>
     </section>
   );
