@@ -15,6 +15,7 @@ const kalam = Kalam({
   variable: "--font-section",
 });
 export const metadata = {
+  metadataBase: new URL("https://www.sara-touahri.com"),
   title: "Sara Touahri | Software Engineer",
   description:
     "Personal website of Sara Touahri, a Software Engineer working across full-stack development, machine learning, and semantic systems.",
