@@ -16,9 +16,23 @@ const kalam = Kalam({
 });
 export const metadata = {
   metadataBase: new URL("https://www.sara-touahri.com"),
+  applicationName: "Sara Touahri",
   title: "Sara Touahri | Software Engineer",
   description:
     "Personal website of Sara Touahri, a Software Engineer working across full-stack development, machine learning, and semantic systems.",
+  authors: [{ name: "Sara Touahri", url: "https://www.sara-touahri.com" }],
+  creator: "Sara Touahri",
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
+  },
 };
 export default function RootLayout({ children }) {
   return (

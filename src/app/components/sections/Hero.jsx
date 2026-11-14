@@ -25,6 +25,7 @@ export default function Hero() {
             {profile.name} - {profile.title}
           </p>
           <h1 className="mt-5 max-w-3xl text-4xl font-semibold leading-[1.1] tracking-[-0.03em] text-white sm:text-5xl lg:text-6xl">
+            <span className="sr-only">Sara Touahri, Software Engineer. </span>
             Building useful software with
             <span className="gradient-text-animated bg-gradient-to-r from-[#C59BFF] via-[#7BFFAF] to-[#C59BFF] bg-clip-text text-transparent"> intelligence and purpose.</span>
           </h1>
