@@ -11,6 +11,7 @@ const navigation = [
   { label: "Education", href: "/#education" },
   { label: "Technologies", href: "/#technologies" },
   { label: "Projects", href: "/pages/Projects" },
+  { label: "More", href: "/#more" },
 ];
 
 export default function NavBar() {
@@ -24,7 +25,7 @@ export default function NavBar() {
     updateScrollState();
     window.addEventListener("scroll", updateScrollState, { passive: true });
 
-    const sections = ["about", "experience", "education", "technologies", "projects"]
+    const sections = ["about", "experience", "education", "technologies", "projects", "more"]
       .map((id) => document.getElementById(id))
       .filter(Boolean);
     const observer = new IntersectionObserver(
@@ -47,8 +48,12 @@ export default function NavBar() {
   return (
     <header className={`sticky top-0 z-50 border-b bg-surface-background/90 backdrop-blur-xl transition-all duration-300 ${isScrolled ? "border-[#4A3B5B] shadow-[0_12px_40px_rgba(0,0,0,.24)]" : "border-[#332A40]"}`}>
       <nav className="mx-auto flex h-[72px] max-w-7xl items-center justify-between px-6 lg:px-16" aria-label="Primary navigation">
-        <Link href="/#top" aria-label="Sara Touahri - Home" className="shrink-0">
-          <Image src="/SaraTouahri.png" width={122} height={36} alt="Sara Touahri" priority />
+        <Link
+          href="/#top"
+          aria-label="Sara Touahri - Home"
+          className="shrink-0 font-section text-3xl font-bold leading-none text-white transition hover:text-[#7BFFAF]"
+        >
+          Sara Touahri<span className="text-[#7BFFAF]">.</span>
         </Link>
 
         <div className="hidden items-center gap-7 lg:flex">

@@ -46,8 +46,8 @@ export default function Hero() {
               rel="noreferrer"
               className="inline-flex items-center gap-2 rounded-lg border border-[#4E4563] bg-surface-secondary px-5 py-3 text-sm text-white transition hover:-translate-y-0.5 hover:border-[#7BFFAF] hover:shadow-[0_10px_30px_rgba(123,255,175,.08)]"
             >
-              <Image src="/ReadCvLogo.svg" width={18} height={18} alt="" />
               View resume
+              <Image src="/ArrowUpRight.svg" width={18} height={18} alt="" />
             </a>
           </div>
 
@@ -77,20 +77,23 @@ export default function Hero() {
               </div>
               <span className="text-[10px] uppercase tracking-[0.2em] text-[#817590]">profile.ts</span>
             </div>
-            <div className="grid min-h-[350px] grid-cols-[1fr_170px] items-end gap-1 p-6 sm:grid-cols-[1fr_210px]">
-              <div data-depth="1" className="self-start pt-5 font-mono text-xs leading-7 sm:text-sm">
+            <div className="grid min-h-[430px] grid-cols-1 items-end gap-1 p-6 sm:min-h-[350px] sm:grid-cols-[1fr_170px]">
+              <div data-depth="1" className="self-start pt-5 font-mono text-xs leading-6">
                 <p><span className="text-[#C59BFF]">const</span> <span className="text-[#7BFFAF]">engineer</span> = &#123;</p>
                 <p className="pl-4 text-white"><span className="text-[#FFB86C]">focus</span>: &quot;useful systems&quot;,</p>
                 <p className="pl-4 text-white"><span className="text-[#FFB86C]">craft</span>: [&quot;web&quot;, &quot;AI&quot;],</p>
+                <p className="pl-4 text-white"><span className="text-[#FFB86C]">research</span>: &quot;ML + semantic web&quot;,</p>
                 <p className="pl-4 text-white"><span className="text-[#FFB86C]">method</span>: &quot;curious + rigorous&quot;,</p>
-                <p className="pl-4 text-white"><span className="text-[#FFB86C]">location</span>: &quot;Algeria&quot;</p>
+                <p className="pl-4 text-white"><span className="text-[#FFB86C]">values</span>: &quot;clarity + impact&quot;,</p>
+                <p className="pl-4 text-white"><span className="text-[#FFB86C]">location</span>: &quot;Algeria&quot;,</p>
+                <p className="pl-4 text-white"><span className="text-[#FFB86C]">status</span>: &quot;open&quot;</p>
                 <p className="text-white">&#125;;</p>
               </div>
               <Image
                 src="/girl.png"
                 width={220}
                 height={250}
-                className="floating-slow relative -bottom-6 w-full object-contain"
+                className="floating-slow relative -bottom-6 w-[180px] justify-self-end object-contain sm:w-full"
                 alt="Developer working at a laptop"
                 priority
               />

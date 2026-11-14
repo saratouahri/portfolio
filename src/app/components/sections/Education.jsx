@@ -1,14 +1,17 @@
 import { education } from "../../data/profile";
 import Reveal from "../ui/Reveal";
 import TiltCard from "../ui/TiltCard";
+import SectionLabel from "../ui/SectionLabel";
+import AmbientShapes from "../ui/AmbientShapes";
 
 export default function Education() {
   return (
-    <section id="education" className="bg-[#1D1629] px-6 py-20 lg:px-16 lg:py-28">
-      <div className="mx-auto max-w-6xl">
+    <section id="education" className="relative overflow-hidden bg-[#1D1629] px-6 py-20 lg:px-16 lg:py-28">
+      <AmbientShapes variant="education" />
+      <div className="relative z-[1] mx-auto max-w-6xl">
         <Reveal className="flex flex-col justify-between gap-6 lg:flex-row lg:items-end">
           <div className="max-w-2xl">
-            <p className="text-xs font-medium uppercase tracking-[0.28em] text-[#7BFFAF]">Education</p>
+            <SectionLabel>Education</SectionLabel>
             <h2 className="mt-4 text-3xl font-semibold text-white lg:text-4xl">A foundation in computing, mathematics, and systems.</h2>
           </div>
           <p className="max-w-sm text-sm leading-7 text-text-secondary">
@@ -27,7 +30,6 @@ export default function Education() {
               <h3 data-depth="1" className="mt-5 text-lg font-semibold leading-7 text-white">{item.qualification}</h3>
               <p className="mt-3 text-sm leading-6 text-[#7BFFAF]">{item.institution}</p>
               <p className="mt-5 text-xs leading-6 text-text-secondary">{item.detail}</p>
-              <p className="mt-5 border-t border-[#403650] pt-4 text-[10px] uppercase tracking-wider text-[#817590]">{item.location}</p>
             </article>
             </TiltCard>
             </Reveal>

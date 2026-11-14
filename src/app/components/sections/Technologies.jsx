@@ -1,13 +1,16 @@
 import { technologyGroups } from "../../data/profile";
 import Reveal from "../ui/Reveal";
 import TiltCard from "../ui/TiltCard";
+import SectionLabel from "../ui/SectionLabel";
+import AmbientShapes from "../ui/AmbientShapes";
 
 export default function Technologies() {
   return (
-    <section id="technologies" className="bg-surface-background px-6 py-20 lg:px-16 lg:py-28">
-      <div className="mx-auto max-w-6xl">
+    <section id="technologies" className="relative overflow-hidden bg-surface-background px-6 py-20 lg:px-16 lg:py-28">
+      <AmbientShapes variant="technologies" />
+      <div className="relative z-[1] mx-auto max-w-6xl">
         <Reveal className="max-w-3xl">
-          <p className="text-xs font-medium uppercase tracking-[0.28em] text-[#7BFFAF]">Technologies</p>
+          <SectionLabel>Technologies</SectionLabel>
           <h2 className="mt-4 text-3xl font-semibold text-white lg:text-4xl">A versatile toolkit for research and product delivery.</h2>
           <p className="mt-4 text-sm leading-7 text-text-secondary">
             Technologies used across professional experience, academic work, and personal projects - grouped by how they contribute to a system.

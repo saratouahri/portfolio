@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { profile } from "../../data/profile";
 import Reveal from "../ui/Reveal";
+import SectionLabel from "../ui/SectionLabel";
 
 export default function ContactCTA() {
   return (
@@ -10,7 +11,7 @@ export default function ContactCTA() {
         <div className="floating-delayed pointer-events-none absolute -bottom-28 left-1/3 h-56 w-56 rounded-full bg-[#7BFFAF]/10 blur-3xl" />
         <div className="grid items-end gap-10 lg:grid-cols-[1fr_auto]">
           <div className="max-w-3xl">
-            <p className="text-xs font-medium uppercase tracking-[0.28em] text-[#7BFFAF]">Let&apos;s work together</p>
+            <SectionLabel>Let&apos;s work together</SectionLabel>
             <h2 className="mt-5 text-3xl font-semibold leading-tight text-white sm:text-4xl lg:text-5xl">
               Have a thoughtful software or AI problem to solve?
             </h2>

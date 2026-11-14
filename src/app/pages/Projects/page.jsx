@@ -6,6 +6,8 @@ import Link from "next/link";
 import ProjectCover from "../../components/ProjectCover";
 import TiltCard from "../../components/ui/TiltCard";
 import Reveal from "../../components/ui/Reveal";
+import SectionLabel from "../../components/ui/SectionLabel";
+import AmbientShapes from "../../components/ui/AmbientShapes";
 import projects from "../../../../public/project";
 
 const categories = ["All", "Web", "AI & ML", "Quantum", "Knowledge Systems", "Simulation"];
@@ -29,9 +31,10 @@ export default function Projects({ featured = false }) {
         className="absolute -left-5 top-4 z-0 opacity-80"
         alt=""
       />
+      <AmbientShapes variant="projects" />
 
       <div className="relative z-[1] mx-auto flex max-w-6xl flex-col items-center">
-        <Image src="/Projects.svg" width={100} height={100} alt="Projects" />
+        <SectionLabel>Projects</SectionLabel>
         <p className="mt-4 text-xs font-medium uppercase tracking-[0.28em] text-[#7BFFAF]">
           {featured ? "Featured work" : "Project archive"}
         </p>

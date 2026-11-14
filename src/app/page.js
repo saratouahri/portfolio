@@ -6,6 +6,7 @@ import Experience from "@/app/components/sections/Experience";
 import Education from "@/app/components/sections/Education";
 import Technologies from "@/app/components/sections/Technologies";
 import ContactCTA from "@/app/components/sections/ContactCTA";
+import More from "@/app/components/sections/More";
 import Projects from "@/app/pages/Projects/page";
 
 export default function APP() {
@@ -17,6 +18,7 @@ export default function APP() {
       <Education />
       <Technologies />
       <Projects featured />
+      <More />
       <ContactCTA />
     </main>
   );

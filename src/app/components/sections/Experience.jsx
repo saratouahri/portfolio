@@ -1,13 +1,16 @@
 import { experience } from "../../data/profile";
 import Reveal from "../ui/Reveal";
 import TiltCard from "../ui/TiltCard";
+import SectionLabel from "../ui/SectionLabel";
+import AmbientShapes from "../ui/AmbientShapes";
 
 export default function Experience() {
   return (
-    <section id="experience" className="bg-surface-background px-6 py-20 lg:px-16 lg:py-28">
-      <div className="mx-auto max-w-6xl">
+    <section id="experience" className="relative overflow-hidden bg-surface-background px-6 py-20 lg:px-16 lg:py-28">
+      <AmbientShapes variant="experience" />
+      <div className="relative z-[1] mx-auto max-w-6xl">
         <Reveal className="max-w-2xl">
-          <p className="text-xs font-medium uppercase tracking-[0.28em] text-[#7BFFAF]">Professional experience</p>
+          <SectionLabel>Professional experience</SectionLabel>
           <h2 className="mt-4 text-3xl font-semibold text-white lg:text-4xl">From research questions to operational systems.</h2>
           <p className="mt-4 text-sm leading-7 text-text-secondary">
             Experience across applied research, machine learning, semantic infrastructure, and enterprise IT.

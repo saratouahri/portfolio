@@ -23,6 +23,7 @@ module.exports = {
       },
       fontFamily: {
         heebo: ["mons", "sans-serif"],
+        section: ["var(--font-section)", "cursive"],
       },
      
       boxShadow: {
