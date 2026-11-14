@@ -10,10 +10,9 @@ export default function More() {
       <AmbientShapes variant="more" />
       <div className="relative z-[1] mx-auto max-w-6xl">
         <Reveal className="max-w-2xl">
-          <SectionLabel>More</SectionLabel>
-          <h2 className="mt-4 text-3xl font-semibold leading-tight text-white lg:text-4xl">
+          <SectionLabel as="h2" className="max-w-xl leading-tight">
             What else shapes the engineer behind the work?
-          </h2>
+          </SectionLabel>
           <p className="mt-4 text-sm leading-7 text-text-secondary">
             Languages, community, and continued learning add more context to the profile beyond project work.
           </p>
@@ -28,10 +27,24 @@ export default function More() {
                 </p>
                 <div className="mt-7 space-y-5">
                   {languages.map((language) => (
-                    <div key={language.name} className="flex items-center gap-4">
-                      <span className="h-px flex-1 bg-[#4E4563]" />
-                      <span className="min-w-24 text-base font-medium text-white">{language.name}</span>
-                      <span className="min-w-16 text-right text-xs text-text-secondary">{language.level}</span>
+                    <div key={language.name}>
+                      <div className="flex items-center justify-between gap-4">
+                        <span className="text-base font-medium text-white">{language.name}</span>
+                        <span className="text-xs text-text-secondary">{language.level}</span>
+                      </div>
+                      <div
+                        role="progressbar"
+                        aria-label={`${language.name}: ${language.level}`}
+                        aria-valuemin={0}
+                        aria-valuemax={100}
+                        aria-valuenow={language.proficiency}
+                        className="mt-2.5 h-1.5 overflow-hidden rounded-full bg-[#171023]"
+                      >
+                        <div
+                          className="h-full rounded-full bg-gradient-to-r from-[#9955E8] to-[#7BFFAF]"
+                          style={{ width: `${language.proficiency}%` }}
+                        />
+                      </div>
                     </div>
                   ))}
                 </div>
@@ -86,35 +99,39 @@ export default function More() {
 
             <div className="mt-6 grid gap-4 md:grid-cols-3">
               {certifications.map((certification, index) => (
-                <a
+                <TiltCard
                   key={certification.credentialId}
-                  href={certification.url}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="group flex min-h-56 flex-col rounded-xl border border-[#4E4563] bg-surface-background p-5 transition hover:-translate-y-1 hover:border-[#7BFFAF] hover:shadow-[0_16px_45px_rgba(123,255,175,.09)]"
+                  intensity={5}
+                  className="h-full rounded-xl"
                 >
-                  <div className="flex items-center justify-between">
-                    <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-[#7BFFAF]/10 text-xs font-semibold text-[#7BFFAF]">
-                      {String(index + 1).padStart(2, "0")}
-                    </span>
-                    <span className="text-[11px] text-[#BFA7E6]">{certification.issued}</span>
-                  </div>
-                  <h4 className="mt-5 text-base font-semibold leading-6 text-white transition group-hover:text-[#7BFFAF]">
-                    {certification.name}
-                  </h4>
-                  <p className="mt-2 text-xs leading-5 text-text-secondary">
-                    {certification.issuer}
-                  </p>
-                  <div className="mt-auto flex items-end justify-between gap-3 pt-6">
+                  <a
+                    href={certification.url}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="group flex h-full min-h-56 flex-col rounded-xl border border-[#4E4563] bg-surface-background p-5 transition hover:border-[#7BFFAF] hover:shadow-[0_16px_45px_rgba(123,255,175,.09)]"
+                  >
                     <div>
-                      <p className="text-[9px] uppercase tracking-[0.16em] text-[#817590]">Credential ID</p>
-                      <p className="mt-1 text-[10px] text-text-secondary">{certification.credentialId}</p>
+                      <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-[#7BFFAF]/10 text-xs font-semibold text-[#7BFFAF]">
+                        {String(index + 1).padStart(2, "0")}
+                      </span>
                     </div>
-                    <span className="text-xs font-medium text-[#7BFFAF]">
-                      Verify <span aria-hidden="true">↗</span>
-                    </span>
-                  </div>
-                </a>
+                    <h4 className="mt-5 text-base font-semibold leading-6 text-white transition group-hover:text-[#7BFFAF]">
+                      {certification.name}
+                    </h4>
+                    <p className="mt-2 text-xs leading-5 text-text-secondary">
+                      {certification.issuer}
+                    </p>
+                    <div className="mt-auto flex items-end justify-between gap-3 pt-6">
+                      <div>
+                        <p className="text-[9px] uppercase tracking-[0.16em] text-[#817590]">Credential ID</p>
+                        <p className="mt-1 text-[10px] text-text-secondary">{certification.credentialId}</p>
+                      </div>
+                      <span className="text-xs font-medium text-[#7BFFAF]">
+                        Verify <span aria-hidden="true">↗</span>
+                      </span>
+                    </div>
+                  </a>
+                </TiltCard>
               ))}
             </div>
           </article>

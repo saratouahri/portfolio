@@ -52,22 +52,30 @@ export const experience = [
       "Supported users and helped document internal procedures.",
       "Learned how enterprise software and networks support energy-sector operations.",
     ],
-    technologies: ["ERP", "IT support", "Networking fundamentals", "Documentation"],
+    technologies: [
+      "ERP",
+      "IT support",
+      "Networking fundamentals",
+      "Documentation",
+    ],
   },
 ];
 
 export const education = [
   {
-    institution: "Higher School of Computer Science 08 May 1945 - Sidi Bel Abbes, Algeria",
+    institution:
+      "Higher School of Computer Science 08 May 1945 - Sidi Bel Abbes, Algeria",
     qualification: "Engineering and Master's degree in Computer Science",
     period: "Sep 2022 - Jul 2025",
     detail: "Specialisation in Information Systems and Web Development.",
   },
   {
-    institution: "Higher School of Computer Science and Digital Technologies (ESTIN), Algeria",
+    institution:
+      "Higher School of Computer Science and Digital Technologies (ESTIN), Algeria",
     qualification: "Engineering preparatory programme",
     period: "Oct 2020 - Jul 2022",
-    detail: "Two-year intensive foundation in Mathematics and Computer Science.",
+    detail:
+      "Two-year intensive foundation in Mathematics and Computer Science.",
   },
   {
     institution: "Mouloud Kacem High School, Algeria",
@@ -112,7 +120,14 @@ export const technologyGroups = [
   {
     title: "Semantic systems",
     description: "Knowledge representation and graph queries",
-    items: ["RDF", "SPARQL", "Virtuoso", "RDF3X", "Apache Jena", "Knowledge graphs"],
+    items: [
+      "RDF",
+      "SPARQL",
+      "Virtuoso",
+      "RDF3X",
+      "Apache Jena",
+      "Knowledge graphs",
+    ],
   },
   {
     title: "Platforms and data",
@@ -131,35 +146,38 @@ export const technologyGroups = [
   {
     title: "Ways of working",
     description: "Practices for maintainable delivery",
-    items: ["Object-oriented design", "DevOps", "Agile", "Scrum", "Research workflows"],
+    items: [
+      "Object-oriented design",
+      "DevOps",
+      "Agile",
+      "Scrum",
+      "Research workflows",
+    ],
   },
 ];
 
 export const languages = [
-  { name: "Arabic", level: "Native" },
-  { name: "English", level: "Fluent" },
-  { name: "French", level: "Fluent" },
+  { name: "Arabic", level: "Native", proficiency: 100 },
+  { name: "English", level: "Fluent", proficiency: 80 },
+  { name: "French", level: "Fluent", proficiency: 80 },
 ];
 
 export const certifications = [
   {
     name: "Generative AI with Large Language Models",
     issuer: "DeepLearning.AI · Amazon Web Services",
-    issued: "Jun 2026",
     credentialId: "8VPUR7JGZ1TD",
     url: "https://www.coursera.org/account/accomplishments/records/8VPUR7JGZ1TD",
   },
   {
     name: "Machine Learning with Python",
     issuer: "IBM",
-    issued: "Jun 2026",
     credentialId: "7IHEVJ5D07LA",
     url: "https://www.coursera.org/account/accomplishments/records/7IHEVJ5D07LA",
   },
   {
     name: "Grammar and Punctuation",
     issuer: "University of California, Irvine",
-    issued: "Jun 2026",
     credentialId: "2JA3Y64OHPBR",
     url: "https://www.coursera.org/account/accomplishments/records/2JA3Y64OHPBR",
   },

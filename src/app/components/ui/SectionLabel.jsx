@@ -1,7 +1,7 @@
-export default function SectionLabel({ children, className = "" }) {
+export default function SectionLabel({ children, className = "", as: Component = "p" }) {
   return (
-    <p className={`font-section text-3xl leading-none text-[#7BFFAF] sm:text-4xl ${className}`}>
+    <Component className={`font-section text-3xl leading-none text-[#7BFFAF] sm:text-4xl ${className}`}>
       {children}
-    </p>
+    </Component>
   );
 }
