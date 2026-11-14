@@ -11,6 +11,8 @@
   "dependencies": {
     "@next/font": "^14.2.5",
     "@radix-ui/react-accordion": "^1.2.0",
+    "@vercel/analytics": "^2.0.1",
+    "@vercel/speed-insights": "^2.1.0",
     "axios": "^1.7.2",
     "emailjs-com": "^3.2.0",
     "next": "^14.2.33",
