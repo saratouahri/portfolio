@@ -22,6 +22,13 @@ export const metadata = {
     "Personal website of Sara Touahri, a Software Engineer working across full-stack development, machine learning, and semantic systems.",
   authors: [{ name: "Sara Touahri", url: "https://www.sara-touahri.com" }],
   creator: "Sara Touahri",
+  icons: {
+    icon: {
+      url: "/Mint-Green%20Anime%20Coding%20Portrait.png",
+      type: "image/png",
+    },
+    apple: "/Mint-Green%20Anime%20Coding%20Portrait.png",
+  },
   robots: {
     index: true,
     follow: true,
