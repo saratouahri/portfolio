@@ -38,7 +38,7 @@ export default function Footer() {
                 <a href={profile.linkedin} target="_blank" rel="noreferrer" className="transition hover:text-white">LinkedIn <span aria-hidden="true">&#8599;</span></a>
                 <a href={profile.github} target="_blank" rel="noreferrer" className="transition hover:text-white">GitHub <span aria-hidden="true">&#8599;</span></a>
                 <Link href="/pages/Contact" className="transition hover:text-white">Contact</Link>
-                <a href={profile.resume} target="_blank" rel="noreferrer" className="transition hover:text-white">Resume <span aria-hidden="true">&#8599;</span></a>
+                <a href={`mailto:${profile.email}`} className="transition hover:text-white">Email me <span aria-hidden="true">&#8599;</span></a>
               </div>
             </div>
           </div>
